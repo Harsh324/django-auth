@@ -132,3 +132,10 @@ EMAIL_HOST_USER = config("EMAIL")
 EMAIL_HOST_PASSWORD = config("EMAIL_PASSWORD")
 EMAIL_PORT = config("EMAIL_PORT")
 EMAIL_USE_TLS = True
+
+# Custom User Model
+AUTH_USER_MODEL = "auth.User"
+
+# Site Domain for the Activation Link generation
+SITE_DOMAIN = "http://localhost:8000"
+SITE_NAME = "localhost"
