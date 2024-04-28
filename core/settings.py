@@ -106,7 +106,7 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -139,3 +139,19 @@ AUTH_USER_MODEL = "authentication.User"
 # Site Domain for the Activation Link generation
 SITE_DOMAIN = "http://localhost:8000"
 SITE_NAME = "localhost"
+
+REST_FRAMEWORK = {
+    # Enable Session Authentication for App
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    # Enable IsAuthenticated Permission
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    # Disable Browsable API and Render JSON
+    #'DEFAULT_RENDERER_CLASSES':('rest_framework.renderers.JSONRenderer',),
+}
+
+# Sessionid Expire default is 1209600 sec = 14 days
+SESSION_COOKIE_AGE = 14400   # 24 Hour
