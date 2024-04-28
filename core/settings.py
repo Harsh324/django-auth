@@ -28,7 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'auth',
+    'authentication',
 ]
 
 MIDDLEWARE = [
@@ -134,7 +134,7 @@ EMAIL_PORT = config("EMAIL_PORT")
 EMAIL_USE_TLS = True
 
 # Custom User Model
-AUTH_USER_MODEL = "auth.User"
+AUTH_USER_MODEL = "authentication.User"
 
 # Site Domain for the Activation Link generation
 SITE_DOMAIN = "http://localhost:8000"
